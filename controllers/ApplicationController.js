@@ -1,8 +1,15 @@
 "use strict";
-exports.__esModule = true;
+Object.defineProperty(exports, "__esModule", { value: true });
+var application_1 = require("../models/application");
 function store(req, res) {
-    req.flash('form', req.body.first_name + ', you are true hero.');
-    res.redirect('/');
+    application_1.create({
+        'name': req.body.name,
+        'phone': req.body.phone,
+        'message': req.body.message,
+    }).then(function () {
+        req.flash('form', req.body.first_name + ', you are true hero.');
+        res.redirect('/');
+    });
 }
 exports.store = store;
 function normalizeData(req, res, next) {
