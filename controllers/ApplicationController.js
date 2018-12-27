@@ -1,12 +1,13 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
+exports.__esModule = true;
 var application_1 = require("../models/application");
 function store(req, res) {
-    application_1.create({
+    var create = new application_1.Application({
         'name': req.body.name,
         'phone': req.body.phone,
-        'message': req.body.message,
-    }).then(function () {
+        'message': req.body.message
+    }).save();
+    create.then(function () {
         req.flash('form', req.body.first_name + ', you are true hero.');
         res.redirect('/');
     });

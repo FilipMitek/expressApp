@@ -1,11 +1,17 @@
 import { bkshelf } from "../config/bookshelf";
 
-export const Application = bkshelf.Model;
-
-export const create = (app) =>{
-    return new Application({
-        name: app.name,
-        phone: app.phone,
-        message: app.message,
-    }).save();
+export class Application extends bkshelf.Model<any> {
+    constructor(app){
+        super();
+        this.tableName = 'application';
+        this.attributes = {
+            'name': app.name,
+            'phone': app.phone,
+            'message': app.message,
+        };
+    };
 };
+
+
+
+
