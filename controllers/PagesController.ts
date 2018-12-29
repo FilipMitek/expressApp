@@ -1,4 +1,6 @@
-export function home(req, res){
+import { Request, Response } from "express";
+
+export function home(req: Request, res: Response){
     res.render('home', {
         formMessage: req.flash('form'),
     });

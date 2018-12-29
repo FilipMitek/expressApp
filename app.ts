@@ -2,9 +2,10 @@ import * as express from 'express';
 import * as path from 'path';
 import * as bodyParser from 'body-parser';
 import * as cookieParser from 'cookie-parser';
-import * as connectFlash from 'connect-flash';
+const connectFlash  = require('connect-flash');
 import * as session from 'express-session';
 import { router } from "./routes/RouteLoader";
+import { catchError, notFound } from "./ErrorHandler/ErrorHandler";
 
 export const app = express();
 
@@ -18,15 +19,14 @@ app.use(cookieParser());
 
 app.use(session({
     secret: 'dog hero',
-    reseave: false,
-    saveUnitialized: true,
-    cookie:[],
+    resave: false,
+    saveUninitialized: true,
+    cookie:{},
 }));
 
 app.use(connectFlash());
 app.use('/', router);
 
-app.use((req, res, next)=> {
-    res.status(404).render('404');
-});
+app.use(notFound);
+app.use(catchError);
 

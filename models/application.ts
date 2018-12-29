@@ -1,7 +1,7 @@
 import { bkshelf } from "../config/bookshelf";
 
 export class Application extends bkshelf.Model<any> {
-    constructor(app){
+    constructor(app: any){
         super();
         this.tableName = 'application';
         this.attributes = {
