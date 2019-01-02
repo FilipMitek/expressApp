@@ -28,5 +28,5 @@ app.use(connectFlash());
 app.use('/', router);
 
 app.use(notFound);
-app.use(catchError);
+//app.use(catchError);
 

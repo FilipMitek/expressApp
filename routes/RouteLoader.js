@@ -5,4 +5,4 @@ var PagesController = require("../controllers/PagesController");
 var ApplicationController = require("../controllers/ApplicationController");
 exports.router = express.Router();
 exports.router.get('/', PagesController.home);
-exports.router.post('/applications', ApplicationController.normalizeData, ApplicationController.store);
+exports.router.post('/applications', ApplicationController.validate, ApplicationController.checkValidation, ApplicationController.normalizeData, ApplicationController.store);

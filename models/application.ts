@@ -6,7 +6,7 @@ export class Application extends bkshelf.Model<any> {
         this.tableName = 'application';
         this.attributes = {
             'name': app.name,
-            'phone': app.phone,
+            'email': app.email,
             'message': app.message,
         };
     };

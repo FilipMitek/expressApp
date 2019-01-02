@@ -21,7 +21,7 @@ var Application = /** @class */ (function (_super) {
         _this.tableName = 'application';
         _this.attributes = {
             'name': app.name,
-            'phone': app.phone,
+            'email': app.email,
             'message': app.message
         };
         return _this;

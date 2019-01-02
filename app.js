@@ -24,4 +24,4 @@ exports.app.use(session({
 exports.app.use(connectFlash());
 exports.app.use('/', RouteLoader_1.router);
 exports.app.use(ErrorHandler_1.notFound);
-exports.app.use(ErrorHandler_1.catchError);
+//app.use(catchError);
