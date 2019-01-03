@@ -53,4 +53,5 @@ export function normalizeData(req: Request, res: Response, next: NextFunction) {
     req.body.last_name = nameArr.join(' ');
 
     next();
+
 }

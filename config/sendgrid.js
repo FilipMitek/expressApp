@@ -1,12 +1,12 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const sgMail = require("@sendgrid/mail");
-sgMail.setApiKey('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');
+exports.__esModule = true;
+var sgMail = require("@sendgrid/mail");
+sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 exports.message = {
     from: 'filip.mitek@interia.pl',
     mail_settings: {
         sandbox_mode: {
             enable: false
         }
-    },
+    }
 };

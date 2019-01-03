@@ -2,10 +2,11 @@ import * as express from 'express';
 import * as path from 'path';
 import * as bodyParser from 'body-parser';
 import * as cookieParser from 'cookie-parser';
-const connectFlash  = require('connect-flash');
 import * as session from 'express-session';
 import { router } from "./routes/RouteLoader";
-import { catchError, notFound } from "./ErrorHandler/ErrorHandler";
+import { notFound } from "./ErrorHandler/ErrorHandler";
+const connectFlash  = require('connect-flash');
+require('dotenv').config({path: '/.env'});
 
 export const app = express();
 

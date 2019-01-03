@@ -1,6 +1,6 @@
 import * as sgMail from '@sendgrid/mail';
 
-sgMail.setApiKey('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');
+sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 export const message = {
     from: 'filip.mitek@interia.pl',
