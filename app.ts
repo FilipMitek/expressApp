@@ -6,7 +6,7 @@ import * as session from 'express-session';
 import { router } from "./routes/RouteLoader";
 import { notFound } from "./ErrorHandler/ErrorHandler";
 const connectFlash  = require('connect-flash');
-require('dotenv').config({path: '/.env'});
+
 
 export const app = express();
 

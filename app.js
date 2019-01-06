@@ -1,14 +1,13 @@
 "use strict";
-exports.__esModule = true;
-var express = require("express");
-var path = require("path");
-var bodyParser = require("body-parser");
-var cookieParser = require("cookie-parser");
-var session = require("express-session");
-var RouteLoader_1 = require("./routes/RouteLoader");
-var ErrorHandler_1 = require("./ErrorHandler/ErrorHandler");
-var connectFlash = require('connect-flash');
-require('dotenv').config({ path: '/.env' });
+Object.defineProperty(exports, "__esModule", { value: true });
+const express = require("express");
+const path = require("path");
+const bodyParser = require("body-parser");
+const cookieParser = require("cookie-parser");
+const session = require("express-session");
+const RouteLoader_1 = require("./routes/RouteLoader");
+const ErrorHandler_1 = require("./ErrorHandler/ErrorHandler");
+const connectFlash = require('connect-flash');
 exports.app = express();
 exports.app.set('views', path.join(__dirname, 'views'));
 exports.app.set('view engine', 'pug');
@@ -20,7 +19,7 @@ exports.app.use(session({
     secret: 'dog hero',
     resave: false,
     saveUninitialized: true,
-    cookie: {}
+    cookie: {},
 }));
 exports.app.use(connectFlash());
 exports.app.use('/', RouteLoader_1.router);

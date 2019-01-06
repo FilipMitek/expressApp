@@ -1,6 +1,7 @@
 import * as sgMail from '@sendgrid/mail';
+import {Parameters} from "../Parameter";
 
-sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+sgMail.setApiKey(Parameters.SENDGRID_API_KEY);
 
 export const message = {
     from: 'filip.mitek@interia.pl',
